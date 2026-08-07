@@ -14,25 +14,19 @@ font-family:'Playfair Display',serif;
 scroll-behavior:smooth;
 }
 
-
 body{
 background:#FFFDF9;
 color:#3E2723;
 }
 
 /* PANTALLA DE ENTRADA */
-
 #inicio{
 height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
 flex-direction:column;
-background:linear-gradient(
- 135deg,
- #FFF1E6,
- #FFFDF9
-);
+background:linear-gradient(135deg, #FFF1E6, #FFFDF9);
 position:relative;
 overflow:hidden;
 }
@@ -41,14 +35,9 @@ h1{
 font-size:70px;
 color:#D84315;
 cursor:pointer;
-text-shadow:
-3px 3px 0 #E0D0C1;
-animation:
-aparecer 2s ease,
-brillo 2s infinite alternate;
-
+text-shadow: 3px 3px 0 #E0D0C1;
+animation: aparecer 2s ease, brillo 2s infinite alternate;
 }
-
 
 h1 span{
 color:#3E2723;
@@ -57,89 +46,44 @@ color:#3E2723;
 .subtitulo{
 margin-top:25px;
 font-size:22px;
-
 }
-
-
 
 /* ANIMACIONES */
-
 @keyframes aparecer{
-from{
-opacity:0;
-transform:scale(.5);
+from{ opacity:0; transform:scale(.5); }
+to{ opacity:1; transform:scale(1); }
 }
-
-to{
-opacity:1;
-transform:scale(1);
-
-}
-
-}
-
 
 @keyframes brillo{
-from{
-
-text-shadow:
-0 0 5px  #D84315;
-}
-
-to{
-
-text-shadow:
-0 0 25px  #E0D0C1;
-
-}
-
+from{ text-shadow: 0 0 5px #D84315; }
+to{ text-shadow: 0 0 25px #E0D0C1; }
 }
 
 /* CHISPITAS CUPCAKE */
 .sprinkle{
-
 position:absolute;
 width:25px;
 height:8px;
 border-radius:10px;
 top:-20px;
 animation:caer 6s infinite;
-
 }
 
 @keyframes caer{
-0%{
-transform:translateY(0) rotate(0deg);
-opacity:1;
+0%{ transform:translateY(0) rotate(0deg); opacity:1; }
+100%{ transform: translateY(110vh) rotate(360deg); opacity:0; }
 }
-
-100%{
-
-transform:
-translateY(110vh)
-rotate(360deg);
-opacity:0;
-
-}
-
-}
-
-
 
 /* PAGINA */
-
 #pagina{
 display:none;
-
 }
 
-
 /* MENU */
-
-
 nav{
 background:#FFFDF9;
 padding:15px 40px;
+display:flex;
 justify-content:space-between;
 align-items:center;
 position:sticky;
@@ -147,6 +91,7 @@ top:0;
 z-index:10;
 box-shadow:0 2px 10px rgba(62,39,35,0.1);
 }
+
 .logo{
     width:90px;
     height:auto;
@@ -164,7 +109,6 @@ nav a:hover{
 color:#D84315;
 }
 
-/* Adaptación para celulares */
 @media (max-width: 768px){
   nav{
     flex-direction:column;
@@ -174,12 +118,9 @@ color:#D84315;
 }
 
 /* SECCIONES */
-
 section{
-
 padding:60px 30px;
 text-align:center;
-
 }
 
 h2{
@@ -189,16 +130,13 @@ color:#D84315;
 }
 
 .tarjetas{
-
 display:flex;
 justify-content:center;
 flex-wrap:wrap;
 gap:25px;
-
 }
 
 .card{
-
 background:#FFFFFF;
 width:260px;
 padding:30px;
@@ -206,30 +144,32 @@ border-radius:25px;
 font-size:20px;
 transition:.4s;
 cursor:pointer;
-border:3px solid  #E0D0C1;
+border:3px solid #E0D0C1;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
 }
+
 .card img {
     width: 100%;
     height: 220px;
     object-fit: cover;
     border-radius: 10px;
+    margin-bottom: 15px;
 }
-
 
 .card:hover{
 transform:translateY(-10px);
-box-shadow:
-0 10px 25px rgba(62,39,35,0.15);
+box-shadow: 0 10px 25px rgba(62,39,35,0.15);
 }
 
 .precio{
 color:#D84315;
 font-weight:bold;
+margin: 10px 0;
 }
 
-/* SOBRE NOSOTROS */
 .texto{
-
 max-width:950px;
 margin:auto;
 background:#FFFDF9;
@@ -237,18 +177,6 @@ padding:40px;
 border-radius:30px;
 line-height:1.8;
 font-size:18px;
-
-}
-
-/* CONTACTO */
-
-input,textarea{
-width:80%;
-padding:15px;
-margin:10px;
-border-radius:15px;
-border:2px solid #E0D0C1;
-background:#FFFFFF;
 }
 
 button{
@@ -264,9 +192,8 @@ transition:.3s;
 
 button:hover{
 background:#3E2723;
-
 }
-    
+
 footer{
     background:#3E2723;
     color:#FFFFFF;
@@ -275,17 +202,12 @@ footer{
     margin-top:60px;
 }
 
-footer h3{
-    font-size:28px;
-    margin-bottom:10px;
-    color:#FFFFFF;
-}
-
 footer p{
     margin:8px 0;
     font-size:16px;
 }
-  /* ESTILOS DEL CARRITO Y BOTÓN FLOTANTE */
+
+/* NUEVO ESTILO: BOTÓN FLOTANTE Y MODAL DEL CARRITO */
 .btn-carrito-flotante {
   position: fixed;
   bottom: 25px;
@@ -297,16 +219,18 @@ footer p{
   padding: 15px 25px;
   font-size: 18px;
   font-weight: bold;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  box-shadow: 0 6px 20px rgba(216,67,21,0.4);
   cursor: pointer;
   z-index: 1000;
   display: flex;
   align-items: center;
   gap: 10px;
+  transition: transform 0.3s;
 }
 
 .btn-carrito-flotante:hover {
   background: #3E2723;
+  transform: scale(1.05);
 }
 
 .modal-carrito {
@@ -316,7 +240,7 @@ footer p{
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0.6);
   z-index: 2000;
   justify-content: center;
   align-items: center;
@@ -325,28 +249,37 @@ footer p{
 .contenido-carrito {
   background: #FFFDF9;
   padding: 30px;
-  border-radius: 20px;
+  border-radius: 25px;
   width: 90%;
   max-width: 450px;
   max-height: 80vh;
   overflow-y: auto;
   border: 3px solid #E0D0C1;
   position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
 .item-carrito {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 0;
+  padding: 12px 0;
   border-bottom: 1px solid #E0D0C1;
+  font-size: 16px;
 }
 
 .item-controles button {
-  padding: 2px 8px;
+  padding: 5px 12px;
   font-size: 14px;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
+  background: #E0D0C1;
+  color: #3E2723;
+}
+
+.item-controles button:hover {
+  background: #D84315;
+  color: white;
 }
 
 .cerrar-modal {
@@ -356,10 +289,10 @@ footer p{
   background: none;
   border: none;
   color: #3E2723;
-  font-size: 24px;
+  font-size: 28px;
   cursor: pointer;
   padding: 0;
-} 
+}
 </style>
 </head>
 
@@ -370,233 +303,178 @@ footer p{
 <h1 onclick="entrar()">Mundo <span>de Postres</span></h1>
 <p class="subtitulo">Pastelería 100% Sin TACC & Gluten-Free • Toca el título para entrar</p>
 </div>
+
 <!-- PAGINA -->
 <div id="pagina">
 
-
 <nav>
-    
 <img src="Logo.jpeg" alt="Mundo de Postres" class="logo">
-    
-<a href="#home"> Inicio</a>
-
-<a href="#productos"> Productos</a>
-
-<a href="#destacados"> Destacados</a>
-
-<a href="#pedidos"> Pedidos</a>
-
-<a href="#galeria"> Galería</a>
-
-<a href="#nosotros"> Nosotros</a>
-
-<a href="#contacto"> Contacto</a>
-
+<a href="#home">Inicio</a>
+<a href="#productos">Productos</a>
+<a href="#destacados">Destacados</a>
+<a href="#galeria">Galería</a>
+<a href="#nosotros">Nosotros</a>
+<a href="#contacto">Contacto</a>
 </nav>
 
-
-
 <section id="home">
-
-<h2> Bienvenidos a Mundo de Postres</h2>
-
-<p>
-
-Creamos postres artesanales llenos de sabor, creatividad y dulzura.
-
-</p>
-
+<h2>Bienvenidos a Mundo de Postres</h2>
+<p>Creamos postres artesanales llenos de sabor, creatividad y dulzura.</p>
 <br>
-
-<button>
-
-Ver catálogo
-
-</button>
-
+<a href="#productos"><button>Ver catálogo</button></a>
 </section>
 
-
-
-
 <section id="productos">
-  <h2> Nuestros Postres</h2>
+  <h2>Nuestros Postres</h2>
   <div class="tarjetas">
     <div class="card">
       <img src="torta.webp" alt="Torta.webp">
       <h3>Tortas Sin TACC</h3>
       <p>Tortas artesanales 100% libres de gluten.</p>
       <p class="precio">$12.000</p>
-      <button onclick="agregarAlCarrito('Tortas Sin TACC', 12000)">Pedir</button>
+      <button onclick="agregarAlCarrito(this, 'Tortas Sin TACC', 12000)">Pedir</button>
     </div>
     <div class="card">
       <img src="cheesecake.jpeg" alt="cheesecake.jpeg">
       <h3>Cheesecake Sin TACC</h3>
       <p>Cheesecake artesanal con frutos rojos.</p>
       <p class="precio">$9.500</p>
-      <button onclick="agregarAlCarrito('Cheesecake Sin TACC', 9500)">Pedir</button>
+      <button onclick="agregarAlCarrito(this, 'Cheesecake Sin TACC', 9500)">Pedir</button>
     </div>
     <div class="card">
       <img src="macarons.webp" alt="macarons.webp">
       <h3>Macarons Sin TACC</h3>
       <p>Macarons de harina de almendras.</p>
       <p class="precio">$5.000</p>
-      <button onclick="agregarAlCarrito('Macarons Sin TACC', 5000)">Pedir</button>
+      <button onclick="agregarAlCarrito(this, 'Macarons Sin TACC', 5000)">Pedir</button>
     </div>
     <div class="card">
       <img src="Brownie.png" alt="Brownie.png">
       <h3>Brownies Sin TACC</h3>
       <p>Brownies caseros, húmedos y con chocolate.</p>
       <p class="precio">$4.500</p>
-      <button onclick="agregarAlCarrito('Brownies Sin TACC', 4500)">Pedir</button>
+      <button onclick="agregarAlCarrito(this, 'Brownies Sin TACC', 4500)">Pedir</button>
     </div>
     <div class="card">
       <img src="cookies.png" alt="cookies.png">
       <h3>Cookies Sin TACC</h3>
       <p>Cookies artesanales con chips de chocolate.</p>
       <p class="precio">$4.000</p>
-      <button onclick="agregarAlCarrito('Cookies Sin TACC', 4000)">Pedir</button>
+      <button onclick="agregarAlCarrito(this, 'Cookies Sin TACC', 4000)">Pedir</button>
     </div>
     <div class="card">
       <img src="alfajores.png" alt="alfajores.png">
       <h3>Alfajores Sin TACC</h3>
       <p>Alfajores de maicena tradicionales.</p>
       <p class="precio">$5.000</p>
-      <button onclick="agregarAlCarrito('Alfajores Sin TACC', 5000)">Pedir</button>
+      <button onclick="agregarAlCarrito(this, 'Alfajores Sin TACC', 5000)">Pedir</button>
     </div>
     <div class="card">
       <img src="postres.png" alt="postres.png">
       <h3>Postres Sin TACC</h3>
       <p>Postres individuales y familiares.</p>
       <p class="precio">$6.500</p>
-      <button onclick="agregarAlCarrito('Postres Sin TACC', 6500)">Pedir</button>
+      <button onclick="agregarAlCarrito(this, 'Postres Sin TACC', 6500)">Pedir</button>
     </div>
     <div class="card">
       <img src="Cupcakes4.jpg" alt="Cupcakes4.jpg">
       <h3>Cupcakes Sin TACC</h3>
       <p>Cupcakes artesanales con toppings.</p>
       <p class="precio">$4.200</p>
-      <button onclick="agregarAlCarrito('Cupcakes Sin TACC', 4200)">Pedir</button>
+      <button onclick="agregarAlCarrito(this, 'Cupcakes Sin TACC', 4200)">Pedir</button>
     </div>
   </div>
 </section>
 
-
 <section id="destacados">
-  <h2> Destacados</h2>
+  <h2>Destacados</h2>
   <div class="tarjetas">
     <div class="card">
       <img src="torta.webp" alt="Producto más vendido">
       <h3>Producto más vendido</h3>
       <p>Torta artesanal para festejos.</p>
       <p class="precio">$35.000</p>
-      <button onclick="agregarAlCarrito('Producto más vendido', 35000)">Pedir</button>
+      <button onclick="agregarAlCarrito(this, 'Producto más vendido', 35000)">Pedir</button>
     </div>
     <div class="card">
       <img src="macarons.webp" alt="Promoción">
       <h3>Promoción de la semana</h3>
       <p>Combo especial: 6 Macarons + 2 Brownies.</p>
       <p class="precio">$8.500</p>
-      <button onclick="agregarAlCarrito('Promo de la semana', 8500)">Pedir</button>
+      <button onclick="agregarAlCarrito(this, 'Promo de la semana', 8500)">Pedir</button>
     </div>
   </div>
 </section>
 
- <!-- BOTÓN FLOTANTE Y VENTANA DEL CARRITO -->
-<button class="btn-carrito-flotante" onclick="abrirCarrito()">
-  🛒 Carrito (<span id="contador-carrito">0</span>)
-</button>
-
-<div id="modal-carrito" class="modal-carrito">
-  <div class="contenido-carrito">
-    <button class="cerrar-modal" onclick="cerrarCarrito()">×</button>
-    <h2 style="font-size:28px; margin-bottom:15px;">Tu Pedido</h2>
-    <div id="lista-carrito">
-      <p>El carrito está vacío.</p>
-    </div>
-    <br>
-    <h3>Total: $<span id="total-carrito">0</span></h3>
-    <br>
-    <button onclick="enviarPedidoWhatsApp()" style="background:#25D366; width:100%; border-radius:10px;">
-      Finalizar Pedido por WhatsApp
-    </button>
-  </div>
-</div>
- 
 <!-- SECCIÓN GALERÍA -->
 <section id="galeria">
   <h2>Galería</h2>
   <div class="tarjetas">
-    <div class="card">
-      <img src="torta.webp" alt="Galería 1">
-    </div>
-    <div class="card">
-      <img src="cheesecake.jpeg" alt="Galería 2">
-    </div>
-    <div class="card">
-      <img src="macarons.webp" alt="Galería 3">
-    </div>
+    <div class="card"><img src="torta.webp" alt="Galería 1"></div>
+    <div class="card"><img src="cheesecake.jpeg" alt="Galería 2"></div>
+    <div class="card"><img src="macarons.webp" alt="Galería 3"></div>
   </div>
 </section>
  
 <!-- SECCIÓN NOSOTROS -->
-  <section id="nosotros">
+<section id="nosotros">
   <h2>Sobre Nosotros</h2>
   <p class="texto">
     En Mundo de Postres nos apasiona crear momentos dulces e inolvidables. Elaboramos cada uno de nuestros productos de manera 100% artesanal, Libres de Gluten y Sin TACC, garantizando el máximo cuidado para que disfrutes sin preocupaciones.
   </p>
 </section>
 
-    <!-- SECCIÓN PEDIDOS Y CONTACTO -->
+<!-- SECCIÓN CONTACTO -->
 <section id="contacto">
   <h2>Realizá tu Pedido / Contacto</h2>
   <p>¡Hacé clic abajo y escribinos por WhatsApp para coordinar tu pedido!</p>
+  <br>
   <a href="https://wa.me/5493563430599?text=Hola%21%20Quiero%20hacer%20un%20pedido%20de%20postres%20Sin%20TACC" target="_blank" style="text-decoration: none;">
-  <button style="background-color: #25D366; color: white; border: none; padding: 15px 30px; font-size: 18px; border-radius: 8px; cursor: pointer;">
-    Pedir por WhatsApp
-  </button>
-</a>
-
+    <button style="background-color: #25D366; color: white; border: none; padding: 15px 30px; font-size: 18px; border-radius: 8px; cursor: pointer;">
+      Pedir por WhatsApp
+    </button>
+  </a>
 </section>
-    <!-- FOOTER -->
-    <footer>
-      <p>© 2026 Mundo de Postres. Todos los derechos reservados.</p>
-    </footer>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Mundo de Postres. Todos los derechos reservados.</p>
+</footer>
 
 </div>
 
-<!-- BOTÓN FLOTANTE Y VENTANA DEL CARRITO -->
+<!-- BOTÓN FLOTANTE DEL CARRITO -->
 <button class="btn-carrito-flotante" onclick="abrirCarrito()">
   🛒 Carrito (<span id="contador-carrito">0</span>)
 </button>
 
+<!-- VENTANA EMERGENTE (MODAL) DEL CARRITO -->
 <div id="modal-carrito" class="modal-carrito">
   <div class="contenido-carrito">
     <button class="cerrar-modal" onclick="cerrarCarrito()">×</button>
-    <h2 style="font-size:28px; margin-bottom:15px;">Tu Pedido</h2>
+    <h2 style="font-size:28px; margin-bottom:15px; text-align:center;">Tu Pedido</h2>
     <div id="lista-carrito">
-      <p>El carrito está vacío.</p>
+      <p style="text-align:center;">El carrito está vacío.</p>
     </div>
     <br>
-    <h3>Total: $<span id="total-carrito">0</span></h3>
+    <h3 style="text-align:right;">Total: $<span id="total-carrito">0</span></h3>
     <br>
-    <button onclick="enviarPedidoWhatsApp()" style="background:#25D366; width:100%; border-radius:10px; padding:15px; border:none; color:white; font-size:16px; cursor:pointer;">
+    <button onclick="enviarPedidoWhatsApp()" style="background:#25D366; width:100%; border-radius:10px; padding:15px; border:none; color:white; font-size:18px; font-weight:bold; cursor:pointer;">
       Finalizar Pedido por WhatsApp
     </button>
   </div>
 </div>
+
 <script>
 function entrar(){
-
-document.getElementById("inicio").style.display="none";
-document.getElementById("pagina").style.display="block";
-
+  document.getElementById("inicio").style.display="none";
+  document.getElementById("pagina").style.display="block";
 }
  
-// LÓGICA DEL CARRITO DE COMPRAS
+// LÓGICA DEL CARRITO
 let carrito = [];
 
-function agregarAlCarrito(nombre, precio) {
+function agregarAlCarrito(boton, nombre, precio) {
   let productoExistente = carrito.find(item => item.nombre === nombre);
   if (productoExistente) {
     productoExistente.cantidad++;
@@ -604,7 +482,15 @@ function agregarAlCarrito(nombre, precio) {
     carrito.push({ nombre: nombre, precio: precio, cantidad: 1 });
   }
   actualizarCarritoUI();
-  alert(¡${nombre} agregado al carrito!);
+
+  // Efecto visual en el botón del producto
+  let textoOriginal = boton.innerText;
+  boton.innerText = "¡Agregado! ✓";
+  boton.style.background = "#25D366";
+  setTimeout(() => {
+    boton.innerText = textoOriginal;
+    boton.style.background = "#D84315";
+  }, 1200);
 }
 
 function cambiarCantidad(index, cambio) {
@@ -623,23 +509,21 @@ function actualizarCarritoUI() {
   carrito.forEach((item, index) => {
     totalCantidad += item.cantidad;
     totalPrecio += item.precio * item.cantidad;
-    listaHtml += `
-      <div class="item-carrito">
-        <div>
-          <strong>${item.nombre}</strong><br>
-          $${item.precio.toLocaleString()} x ${item.cantidad}
-        </div>
-        <div class="item-controles">
-          <button onclick="cambiarCantidad(${index}, -1)">-</button>
-          <button onclick="cambiarCantidad(${index}, 1)">+</button>
-        </div>
-      </div>
-    `;
+    listaHtml += '<div class="item-carrito">' +
+        '<div>' +
+          '<strong>' + item.nombre + '</strong><br>' +
+          '$' + item.precio.toLocaleString() + ' x ' + item.cantidad +
+        '</div>' +
+        '<div class="item-controles">' +
+          '<button onclick="cambiarCantidad(' + index + ', -1)">-</button> ' +
+          '<button onclick="cambiarCantidad(' + index + ', 1)">+</button>' +
+        '</div>' +
+      '</div>';
   });
 
   document.getElementById("contador-carrito").innerText = totalCantidad;
   document.getElementById("total-carrito").innerText = totalPrecio.toLocaleString();
-  document.getElementById("lista-carrito").innerHTML = listaHtml || "<p>El carrito está vacío.</p>";
+  document.getElementById("lista-carrito").innerHTML = listaHtml || "<p style='text-align:center;'>El carrito está vacío.</p>";
 }
 
 function abrirCarrito() {
@@ -662,41 +546,37 @@ function enviarPedidoWhatsApp() {
   carrito.forEach(item => {
     let subtotal = item.precio * item.cantidad;
     total += subtotal;
-    mensaje += - ${item.cantidad}x ${item.nombre} ($${subtotal.toLocaleString()})\n;
+    mensaje += "- " + item.cantidad + "x " + item.nombre + " ($" + subtotal.toLocaleString() + ")\n";
   });
 
-  mensaje += \nTotal: $${total.toLocaleString()};
+  mensaje += "\nTotal: $" + total.toLocaleString();
 
-  let url = https://wa.me/5493563430599?text=${encodeURIComponent(mensaje)};
+  let url = "https://wa.me/5493563430599?text=" + encodeURIComponent(mensaje);
   window.open(url, "_blank");
 }
  
-// Crear lluvia de chispitas
-
+// Lluvia de chispitas
 for(let i=0;i<100;i++){
-let s=document.createElement("div");
-s.className="sprinkle";
+  let s=document.createElement("div");
+  s.className="sprinkle";
 
-let colores=[
-"#D84315",
-"#3E2723",
-"#E0D0C1",
-"#FFF1E6",
-"#F4A261",
-"#FFFFFF"
-];
+  let colores=[
+    "#D84315",
+    "#3E2723",
+    "#E0D0C1",
+    "#FFF1E6",
+    "#F4A261",
+    "#FFFFFF"
+  ];
 
-s.style.background=colores[Math.floor(Math.random()*colores.length)];
-s.style.left=Math.random()*100+"%";
-s.style.animationDelay=Math.random()*6+"s";
-s.style.transform="rotate("+Math.random()*360+"deg)";
+  s.style.background=colores[Math.floor(Math.random()*colores.length)];
+  s.style.left=Math.random()*100+"%";
+  s.style.animationDelay=Math.random()*6+"s";
+  s.style.transform="rotate("+Math.random()*360+"deg)";
 
-document.getElementById("inicio").appendChild(s);
+  document.getElementById("inicio").appendChild(s);
 }
-
 </script>
 
-
-
 </body>
-</html> 
+</html>
