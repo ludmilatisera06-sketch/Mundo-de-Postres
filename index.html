@@ -79,12 +79,12 @@ animation:caer 6s infinite;
 display:none;
 }
 
-/* MENU */
+/* MENU EQUILIBRADO */
 nav{
 background:#FFFDF9;
-padding:15px 40px;
+padding:15px 50px;
 display:flex;
-justify-content:space-between;
+justify-content:space-between; /* Separa el logo de los enlaces */
 align-items:center;
 position:sticky;
 top:0;
@@ -93,16 +93,21 @@ box-shadow:0 2px 10px rgba(62,39,35,0.1);
 }
 
 .logo{
-    width:90px;
+    width:70px;
     height:auto;
+}
+
+.nav-links {
+    display: flex;
+    gap: 35px; /* Distancia equilibrada y prolija entre cada opción */
 }
 
 nav a{
 text-decoration:none;
 color:#3E2723;
 font-weight:bold;
-margin:10px;
 transition:.3s;
+font-size: 18px;
 }
 
 nav a:hover{
@@ -112,8 +117,13 @@ color:#D84315;
 @media (max-width: 768px){
   nav{
     flex-direction:column;
-    gap:10px;
+    gap:15px;
     padding:15px;
+  }
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
   }
 }
 
@@ -207,7 +217,7 @@ footer p{
     font-size:16px;
 }
 
-/* NUEVO ESTILO: BOTÓN FLOTANTE Y MODAL DEL CARRITO */
+/* BOTÓN FLOTANTE Y MODAL DEL CARRITO */
 .btn-carrito-flotante {
   position: fixed;
   bottom: 25px;
@@ -308,13 +318,15 @@ footer p{
 <div id="pagina">
 
 <nav>
-<img src="Logo.jpeg" alt="Mundo de Postres" class="logo">
-<a href="#home">Inicio</a>
-<a href="#productos">Productos</a>
-<a href="#destacados">Destacados</a>
-<a href="#galeria">Galería</a>
-<a href="#nosotros">Nosotros</a>
-<a href="#contacto">Contacto</a>
+  <img src="Logo.jpeg" alt="Mundo de Postres" class="logo">
+  <div class="nav-links">
+    <a href="#home">Inicio</a>
+    <a href="#productos">Productos</a>
+    <a href="#destacados">Destacados</a>
+    <a href="#galeria">Galería</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#contacto">Contacto</a>
+  </div>
 </nav>
 
 <section id="home">
