@@ -285,6 +285,81 @@ footer p{
     margin:8px 0;
     font-size:16px;
 }
+  /* ESTILOS DEL CARRITO Y BOTÓN FLOTANTE */
+.btn-carrito-flotante {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #D84315;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 50px;
+  padding: 15px 25px;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  cursor: pointer;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-carrito-flotante:hover {
+  background: #3E2723;
+}
+
+.modal-carrito {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenido-carrito {
+  background: #FFFDF9;
+  padding: 30px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 450px;
+  max-height: 80vh;
+  overflow-y: auto;
+  border: 3px solid #E0D0C1;
+  position: relative;
+}
+
+.item-carrito {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #E0D0C1;
+}
+
+.item-controles button {
+  padding: 2px 8px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cerrar-modal {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: #3E2723;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+} 
 </style>
 </head>
 
@@ -345,107 +420,108 @@ Ver catálogo
 
 
 <section id="productos">
-
-<h2> Nuestros Postres</h2>
-
-
-<div class="tarjetas">
-
-
-<div class="card">
-
-<img src="torta.webp" alt="Torta.webp">
-
-<h3>Tortas Sin TACC</h3>
-
-<p>Tortas artesanales 100% libres de gluten para cumpleaños y eventos.</p>
-
-<p class="precio">$12000</p>
-
-<button>Pedir</button>
-
-</div>
-
-<div class="card">
- <img src="cheesecake.jpeg" alt="cheesecake.jpeg">
-  <h3> Cheesecake Sin TACC</h3>
-  <p>Cheesecake artesanal con frutos rojos, 100% libre de gluten.</p>
-  <p class="precio">$9.500</p>
-  <button>Pedir</button>
-</div>
-<div class="card">
- <img src="macarons.webp" alt="macarons.webp">
-  <h3> Macarons Sin TACC</h3>
-  <p>macarons de harina de almendras, libres de gluten.</p>
-  <p class="precio">$5.000</p>
-  <button>Pedir</button>
-</div>
-<div class="card">
- <img src="Brownie.png" alt="Brownie.png">
-  <h3> Brownies Sin TACC</h3>
-  <p>Brownies caseros, húmedos,con mucho chocolate y Sin TACC.</p>
-  <p class="precio">$4.500</p>
-  <button>Pedir</button>
-</div>
-<div class="card">
-  <img src="cookies.png" alt="cookies.png">
-  <h3> Cookies Sin TACC</h3>
-  <p>Cookies artesanales con chips de chocolate, libres de gluen.</p>
-  <p class="precio">$4.000</p>
-  <button>Pedir</button>
-</div>
-<div class="card">
-<img src="alfajores.png" alt="alfajores.png">
-  <h3> Alfajores Sin TACC</h3>
-  <p>Alfajores de maicena tradicionales, 100% Sin TACC.</p>
-  <p class="precio">$5.000</p>
-  <button>Pedir</button>
-</div>
-
-<div class="card">
-<img src="postres.png" alt="postres.png">
-  <h3> Postres Sin TACC</h3>
-  <p>Postres individuales y familiares 100% Sin TACC, ideales para compartir.</p>
-  <p class="precio">$6.500</p>
-  <button>Pedir</button>
-</div>
-<div class="card">
-  <img src="Cupcakes4.jpg" alt="Cupcakes4.jpg">
-  <h3> Cupcakes Sin TACC</h3>
-  <p>Cupcakes artesanales libres de gluten, decorados con crema y toppings.</p>
-  <p class="precio">$4.200</p>
-  <button>Pedir</button>
-</div>
+  <h2> Nuestros Postres</h2>
+  <div class="tarjetas">
+    <div class="card">
+      <img src="torta.webp" alt="Torta.webp">
+      <h3>Tortas Sin TACC</h3>
+      <p>Tortas artesanales 100% libres de gluten.</p>
+      <p class="precio">$12.000</p>
+      <button onclick="agregarAlCarrito('Tortas Sin TACC', 12000)">Pedir</button>
+    </div>
+    <div class="card">
+      <img src="cheesecake.jpeg" alt="cheesecake.jpeg">
+      <h3>Cheesecake Sin TACC</h3>
+      <p>Cheesecake artesanal con frutos rojos.</p>
+      <p class="precio">$9.500</p>
+      <button onclick="agregarAlCarrito('Cheesecake Sin TACC', 9500)">Pedir</button>
+    </div>
+    <div class="card">
+      <img src="macarons.webp" alt="macarons.webp">
+      <h3>Macarons Sin TACC</h3>
+      <p>Macarons de harina de almendras.</p>
+      <p class="precio">$5.000</p>
+      <button onclick="agregarAlCarrito('Macarons Sin TACC', 5000)">Pedir</button>
+    </div>
+    <div class="card">
+      <img src="Brownie.png" alt="Brownie.png">
+      <h3>Brownies Sin TACC</h3>
+      <p>Brownies caseros, húmedos y con chocolate.</p>
+      <p class="precio">$4.500</p>
+      <button onclick="agregarAlCarrito('Brownies Sin TACC', 4500)">Pedir</button>
+    </div>
+    <div class="card">
+      <img src="cookies.png" alt="cookies.png">
+      <h3>Cookies Sin TACC</h3>
+      <p>Cookies artesanales con chips de chocolate.</p>
+      <p class="precio">$4.000</p>
+      <button onclick="agregarAlCarrito('Cookies Sin TACC', 4000)">Pedir</button>
+    </div>
+    <div class="card">
+      <img src="alfajores.png" alt="alfajores.png">
+      <h3>Alfajores Sin TACC</h3>
+      <p>Alfajores de maicena tradicionales.</p>
+      <p class="precio">$5.000</p>
+      <button onclick="agregarAlCarrito('Alfajores Sin TACC', 5000)">Pedir</button>
+    </div>
+    <div class="card">
+      <img src="postres.png" alt="postres.png">
+      <h3>Postres Sin TACC</h3>
+      <p>Postres individuales y familiares.</p>
+      <p class="precio">$6.500</p>
+      <button onclick="agregarAlCarrito('Postres Sin TACC', 6500)">Pedir</button>
+    </div>
+    <div class="card">
+      <img src="Cupcakes4.jpg" alt="Cupcakes4.jpg">
+      <h3>Cupcakes Sin TACC</h3>
+      <p>Cupcakes artesanales con toppings.</p>
+      <p class="precio">$4.200</p>
+      <button onclick="agregarAlCarrito('Cupcakes Sin TACC', 4200)">Pedir</button>
+    </div>
+  </div>
 </section>
-
-
 
 
 <section id="destacados">
-
-<h2> Destacados</h2>
-
-<div class="tarjetas">
-
-<div class="card">
-  <img src="torta.webp" alt="Producto más vendido">
-<h3>Producto más vendido</h3>
- <p>Torta artesanal ideal para festejos y eventos.</p>
- <p class="precio">$35000</p>
-  <a href="#pedidos"><button>Pedir</button></a>
+  <h2> Destacados</h2>
+  <div class="tarjetas">
+    <div class="card">
+      <img src="torta.webp" alt="Producto más vendido">
+      <h3>Producto más vendido</h3>
+      <p>Torta artesanal para festejos.</p>
+      <p class="precio">$35.000</p>
+      <button onclick="agregarAlCarrito('Producto más vendido', 35000)">Pedir</button>
+    </div>
+    <div class="card">
+      <img src="macarons.webp" alt="Promoción">
+      <h3>Promoción de la semana</h3>
+      <p>Combo especial: 6 Macarons + 2 Brownies.</p>
+      <p class="precio">$8.500</p>
+      <button onclick="agregarAlCarrito('Promo de la semana', 8500)">Pedir</button>
+    </div>
   </div>
-
-<div class="card">
-  <img src="macarons.webp" alt="Promoción de la semana">
-  <h3>Promoción de la semana</h3>
- <p>Combo especial: 6 Macarons + 2 Brownies de chocolate.</p>
-  <p class="precio">$8500</p>
-<a href="#pedidos"><button>Pedir</button></a>
-</div>
- 
- </div>
- 
 </section>
+
+ <!-- BOTÓN FLOTANTE Y VENTANA DEL CARRITO -->
+<button class="btn-carrito-flotante" onclick="abrirCarrito()">
+  🛒 Carrito (<span id="contador-carrito">0</span>)
+</button>
+
+<div id="modal-carrito" class="modal-carrito">
+  <div class="contenido-carrito">
+    <button class="cerrar-modal" onclick="cerrarCarrito()">×</button>
+    <h2 style="font-size:28px; margin-bottom:15px;">Tu Pedido</h2>
+    <div id="lista-carrito">
+      <p>El carrito está vacío.</p>
+    </div>
+    <br>
+    <h3>Total: $<span id="total-carrito">0</span></h3>
+    <br>
+    <button onclick="enviarPedidoWhatsApp()" style="background:#25D366; width:100%; border-radius:10px;">
+      Finalizar Pedido por WhatsApp
+    </button>
+  </div>
+</div>
  
 <!-- SECCIÓN GALERÍA -->
 <section id="galeria">
@@ -489,7 +565,26 @@ Ver catálogo
 
 </div>
 
+<!-- BOTÓN FLOTANTE Y VENTANA DEL CARRITO -->
+<button class="btn-carrito-flotante" onclick="abrirCarrito()">
+  🛒 Carrito (<span id="contador-carrito">0</span>)
+</button>
 
+<div id="modal-carrito" class="modal-carrito">
+  <div class="contenido-carrito">
+    <button class="cerrar-modal" onclick="cerrarCarrito()">×</button>
+    <h2 style="font-size:28px; margin-bottom:15px;">Tu Pedido</h2>
+    <div id="lista-carrito">
+      <p>El carrito está vacío.</p>
+    </div>
+    <br>
+    <h3>Total: $<span id="total-carrito">0</span></h3>
+    <br>
+    <button onclick="enviarPedidoWhatsApp()" style="background:#25D366; width:100%; border-radius:10px; padding:15px; border:none; color:white; font-size:16px; cursor:pointer;">
+      Finalizar Pedido por WhatsApp
+    </button>
+  </div>
+</div>
 <script>
 function entrar(){
 
@@ -497,7 +592,85 @@ document.getElementById("inicio").style.display="none";
 document.getElementById("pagina").style.display="block";
 
 }
+ 
+// LÓGICA DEL CARRITO DE COMPRAS
+let carrito = [];
 
+function agregarAlCarrito(nombre, precio) {
+  let productoExistente = carrito.find(item => item.nombre === nombre);
+  if (productoExistente) {
+    productoExistente.cantidad++;
+  } else {
+    carrito.push({ nombre: nombre, precio: precio, cantidad: 1 });
+  }
+  actualizarCarritoUI();
+  alert(¡${nombre} agregado al carrito!);
+}
+
+function cambiarCantidad(index, cambio) {
+  carrito[index].cantidad += cambio;
+  if (carrito[index].cantidad <= 0) {
+    carrito.splice(index, 1);
+  }
+  actualizarCarritoUI();
+}
+
+function actualizarCarritoUI() {
+  let totalCantidad = 0;
+  let totalPrecio = 0;
+  let listaHtml = "";
+
+  carrito.forEach((item, index) => {
+    totalCantidad += item.cantidad;
+    totalPrecio += item.precio * item.cantidad;
+    listaHtml += `
+      <div class="item-carrito">
+        <div>
+          <strong>${item.nombre}</strong><br>
+          $${item.precio.toLocaleString()} x ${item.cantidad}
+        </div>
+        <div class="item-controles">
+          <button onclick="cambiarCantidad(${index}, -1)">-</button>
+          <button onclick="cambiarCantidad(${index}, 1)">+</button>
+        </div>
+      </div>
+    `;
+  });
+
+  document.getElementById("contador-carrito").innerText = totalCantidad;
+  document.getElementById("total-carrito").innerText = totalPrecio.toLocaleString();
+  document.getElementById("lista-carrito").innerHTML = listaHtml || "<p>El carrito está vacío.</p>";
+}
+
+function abrirCarrito() {
+  document.getElementById("modal-carrito").style.display = "flex";
+}
+
+function cerrarCarrito() {
+  document.getElementById("modal-carrito").style.display = "none";
+}
+
+function enviarPedidoWhatsApp() {
+  if (carrito.length === 0) {
+    alert("Tu carrito está vacío.");
+    return;
+  }
+
+  let mensaje = "Hola! Quisiera realizar el siguiente pedido en Mundo de Postres:\n\n";
+  let total = 0;
+
+  carrito.forEach(item => {
+    let subtotal = item.precio * item.cantidad;
+    total += subtotal;
+    mensaje += - ${item.cantidad}x ${item.nombre} ($${subtotal.toLocaleString()})\n;
+  });
+
+  mensaje += \nTotal: $${total.toLocaleString()};
+
+  let url = https://wa.me/5493563430599?text=${encodeURIComponent(mensaje)};
+  window.open(url, "_blank");
+}
+ 
 // Crear lluvia de chispitas
 
 for(let i=0;i<100;i++){
@@ -520,6 +693,7 @@ s.style.transform="rotate("+Math.random()*360+"deg)";
 
 document.getElementById("inicio").appendChild(s);
 }
+
 </script>
 
 
