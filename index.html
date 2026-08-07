@@ -16,8 +16,8 @@ scroll-behavior:smooth;
 
 
 body{
-background:#FFFFFF;
-color:#4A3A46;
+background:##FFFDF9;
+color:#3E2723;
 }
 
 /* PANTALLA DE ENTRADA */
@@ -30,8 +30,8 @@ align-items:center;
 flex-direction:column;
 background:linear-gradient(
  135deg,
- #FFE5F0,
- #FFFFFF
+ #FFF1E6,
+ #FFFDF9
 );
 position:relative;
 overflow:hidden;
@@ -39,10 +39,10 @@ overflow:hidden;
 
 h1{
 font-size:70px;
-color:#C999AF;
+color:#D84315;
 cursor:pointer;
 text-shadow:
-3px 3px 0 #FDCAE1;
+3px 3px 0 #E0D0C1;
 animation:
 aparecer 2s ease,
 brillo 2s infinite alternate;
@@ -51,7 +51,7 @@ brillo 2s infinite alternate;
 
 
 h1 span{
-color:#C0A0C3;
+color:#3E2723;
 }
 
 .subtitulo{
@@ -83,13 +83,13 @@ transform:scale(1);
 from{
 
 text-shadow:
-0 0 5px  #E3B1C8;
+0 0 5px  #D84315;
 }
 
 to{
 
 text-shadow:
-0 0 25px  #C999AF;
+0 0 25px  #E0D0C1;
 
 }
 
@@ -138,14 +138,14 @@ display:none;
 
 
 nav{
-background:#FFFFFF;
+background:#FFFDF9;
 padding:15px 40px;
 justify-content:space-between;
 align-items:center;
 position:sticky;
 top:0;
 z-index:10;
-box-shadow:0 2px 10px rgba(0,0,0,.08);
+box-shadow:0 2px 10px rgba(62,39,35,0.1);
 
 }
 .logo{
@@ -155,7 +155,7 @@ box-shadow:0 2px 10px rgba(0,0,0,.08);
 
 nav a{
 text-decoration:none;
-color:#C999AF;
+color:#3E2723;
 font-weight:bold;
 margin:10px;
 transition:.3s;
@@ -164,7 +164,7 @@ transition:.3s;
 
 
 nav a:hover{
-color:#C0A0C3;
+color:#D84315;
 
 }
 
@@ -181,7 +181,7 @@ text-align:center;
 h2{
 font-size:38px;
 margin-bottom:25px;
-color:#C999AF;
+color:#D84315;
 }
 
 .tarjetas{
@@ -195,14 +195,14 @@ gap:25px;
 
 .card{
 
-background:#FDCAE1;
+background:#FFFFFF;
 width:260px;
 padding:30px;
 border-radius:25px;
 font-size:20px;
 transition:.4s;
 cursor:pointer;
-border:3px solid  #FFE5F0;
+border:3px solid  #E0D0C1;
 }
 .card img {
     width: 100%;
@@ -215,13 +215,12 @@ border:3px solid  #FFE5F0;
 .card:hover{
 transform:translateY(-10px);
 box-shadow:
-0 10px 25px  #C0A0C3;
+0 10px 25px rgba(62,39,35,0.15);
 }
 
 .precio{
-color:#C999AF;
+color:#D84315;
 font-weight:bold;
-
 }
 
 /* SOBRE NOSOTROS */
@@ -229,7 +228,7 @@ font-weight:bold;
 
 max-width:950px;
 margin:auto;
-background:#FDCAE1;
+background:#FFFDF9;
 padding:40px;
 border-radius:30px;
 line-height:1.8;
@@ -244,12 +243,12 @@ width:80%;
 padding:15px;
 margin:10px;
 border-radius:15px;
-border:2px solid #C999AF;
+border:2px solid #E0D0C1;
 background:#FFFFFF;
 }
 
 button{
-background:#E3B1C8;
+background:#D84315;
 color:#FFFFFF;
 border:none;
 padding:15px 35px;
@@ -260,12 +259,12 @@ transition:.3s;
 }
 
 button:hover{
-background:#C999AF;
+background:#3E2723;
 
 }
     
 footer{
-    background:#C999AF;
+    background:#3E2723;
     color:#FFFFFF;
     text-align:center;
     padding:40px 20px;
@@ -502,13 +501,12 @@ let s=document.createElement("div");
 s.className="sprinkle";
 
 let colores=[
-"#FFFFFF",
-"#FFE5F0",
-"#FDCAE1",
-"#E3B1C8",
-"#C999AF",
-"#C0A0C3"
-
+"#D84315",
+"#3E2723",
+"#E0D0C1",
+"#FFF1E6",
+"#F4A261",
+"#FFFFFF"
 ];
 
 s.style.background=colores[Math.floor(Math.random()*colores.length)];
