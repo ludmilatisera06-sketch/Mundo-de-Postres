@@ -219,7 +219,7 @@ footer p{
 
 /* BOTÓN FLOTANTE Y MODAL DEL CARRITO */
 .btn-carrito-flotante {
-  display: none; /* <--- Agregás esta línea para que nazca oculto */
+  display: none !important; /* <--- Agregás esta línea para que nazca oculto */
   position: fixed;
   bottom: 25px;
   right: 25px;
@@ -481,7 +481,7 @@ footer p{
 function entrar(){
   document.getElementById("inicio").style.display="none";
   document.getElementById("pagina").style.display="block";
-  document.getElementById("btn-carrito").style.display="flex";
+  document.getElementById("btn-carrito").style.setProperty("display", "flex", "important");
 }
  
 // LÓGICA DEL CARRITO
